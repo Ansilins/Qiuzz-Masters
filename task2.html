@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Master</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-image: ('bgimage2.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        .container-login {
+            max-width: 400px;
+            margin: 0 auto;
+            padding-top: 100px;
+        }
+    </style>
+</head>
+<body>  
+    <div class="container-login">
+        <div class="card">
+            <div class="card-body">
+                <h1 class="text-center mb-4">Quiz Master</h1>
+                <form action="Quizmaster.html" id="loginForm" class="was-validated">
+                    <div class="mb-3">
+                        <label for="username" class="form-label">Username:</label>
+                        <input type="text" id="username" name="username" class="form-control" placeholder="Enter your username" required>
+                        <div class="valid-feedback">Valid.</div>
+                        <div class="invalid-feedback">Please fill out this field.</div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Password:</label>
+                        <input type="password" id="password" name="password" class="form-control" placeholder="Enter your password" required>
+                        <div class="valid-feedback">Valid.</div>
+                        <div class="invalid-feedback">Please fill out this field.</div>
+                    </div>
+
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary" onclick="login()">Login</button>
+                        <a href="task2ext.html" onclick="showSignupForm()">Signup</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div id="quiz-container" class="container mt-5" style="display: none;">
+        <h1>Welcome to the Quiz Master!</h1>
+        <h3><strong>Test your Skills</strong></h3>
+        <!-- Questions will be generated dynamically using JavaScript -->
+    </div>
+
+    <button onclick="submitQuiz()" id="submitQuizBtn" class="btn btn-primary mt-3" style="display: none;">Submit Quiz</button>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

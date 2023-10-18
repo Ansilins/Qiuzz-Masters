@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Master - Home</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('h2.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            margin: 0;
+            padding: 0;
+            background-color: #e0f2e9;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .container1{
+            margin-top: 75px;
+            width: 1000px;
+            margin-left: 200px;
+        }
+        header {
+            margin-top: 300px;
+            background-color: #ffffff;
+            color: #000000;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            border-radius: 1px;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+            margin: 20px auto;
+        }
+
+        .header-buttons {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+        }
+        .header-button {
+            margin-left: 10px;
+            color: #000000;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        h1 {
+            margin: 0;
+            color: #000000;
+        }
+        .start-button {
+            display: inline-block;
+            padding: 8px 16px;
+            background: transparent;
+            border: #000000;
+            color: #000000;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: none;
+        }
+        .start-button:hover {
+            background-color: #ffffff;
+        }
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            color: #000000;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+        #b1{
+            margin-left: 660px;
+            padding: 10px 19px;
+            background: transparent;
+            color: black;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: none;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="header-buttons">
+            <button><a class="header-button" href="task3ext.html">Sign Up</a></button>
+            <button><a class="header-button" href="task3.html">Login</a></button>
+        </div>
+        <div class="container1">
+            <header>
+        <h1>Welcome to Quiz Master!</h1>
+        <p>Test your knowledge with our fun and challenging quizzes.</p>
+        <button><a class="start-button" href="Quizmaster.html">Start Quiz</a></button>
+    </header>
+    </div>
+    
+    <button id="b1" style="background: white; border-color:#ffffff;">About</button>
+    <div class="container" id="1" style="display: none; margin-top: 30px;">
+      <div id="2"><h2>About Quiz Master</h2>
+        <p>Quiz Master is a platform that offers a variety of quizzes on different topics. Challenge yourself and have fun while learning!</p></div>  
+    </div>
+
+    <footer class="container3" style="background-color: #ffffff; margin-left: 400px; width: 500px;">
+        &copy; 2023 Quiz Master. All rights reserved.
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        const btn=document.getElementById("b1");
+        btn.addEventListener("click", function(){
+        if ($("#1").first().is(":hidden")) {
+          $("#1").fadeIn("slow");
+        }
+        else {
+          $("#1").fadeOut("slow");
+        }
+      });
+      </script>
+    
+    
+</body>
+</html>

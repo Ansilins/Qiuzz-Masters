@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Science</title>
+    <style>
+        body {
+            background-image: url("bgimage.jpg");
+            background-size:cover;
+            background-attachment: fixed;
+        }
+    </style>
+</head>
+<body>  
+    <h1><strong>Test your Science knowledge here!</strong></h1>
+    <div id="quiz-container">
+    </div>
+    <button id="button" onclick="submitQuiz()" >Submit Quiz</button>
+
+</body>
+</html>
+
+</head>
+<body>  
+
+    <script>
+        const questions = [
+            {
+                question: "What is the chemical symbol for the element gold?",
+                options: ["a) Go"," b) Au"," c) GoLd"," d) Gd"],
+                correctAnswer: "b"
+            },
+            {
+                question: "What is the chemical formula for water?",
+                options: ["a) Co2", "b) H2O", "c) CH4 ", "d) O2"],
+                correctAnswer: "b"
+            },
+            {
+                question: "Which planet is known as the 'Red Planet' ?",
+                options: ["a) Mars", "b) Venus", "c) Earth", "d) Venus"],
+                correctAnswer: "a"
+            },
+            {
+                question: "Who is known as the father of modern physics?",
+                options: ["a)Galileo Galilei", "b) Isaac Newton", "c)  Albert Einstein", "d)  Stephen Hawking"],
+                correctAnswer: "c"
+            },
+            {
+                question: "Which gas do plants absorb from the atmosphere during photosynthesis",
+                options: ["a) Oxygen", "b) Nitrogen", "c) Carbon dioxide", "d) Hydrogen"],
+                correctAnswer: "c"
+            },
+           
+        ];
+
+        const quizContainer = document.getElementById('quiz-container');
+
+        function generateQuiz() {
+            for (let i = 0; i < questions.length; i++) {
+                const question = questions[i];
+                const questionElement = document.createElement('div');
+                questionElement.innerHTML = `
+                    <h2>Question ${i + 1}:</h2>
+                    <p>${question.question}</p>
+                    ${generateOptions(question, i)}
+                `;
+                quizContainer.appendChild(questionElement);
+            }
+        }
+
+        function generateOptions(question, index) {
+            let optionsHTML = '';
+            for (let i = 0; i < question.options.length; i++) {
+                optionsHTML += `
+                    <label>
+                        <input type="radio" name="q${index}" value="${question.options[i].charAt(0)}" ${i === 0 ? 'checked' : ''}> ${question.options[i]}
+                    </label><br>
+                `;
+            }
+            return optionsHTML;
+        }
+
+        function submitQuiz() {
+            const totalQuestions = questions.length;
+            let correctAnswers = 0;
+
+            for (let i = 0; i < totalQuestions; i++) {
+                const question = questions[i];
+                const selectedOption = document.querySelector(`input[name="q${i}"]:checked`);
+                if (selectedOption) {
+                    const userAnswer = selectedOption.value;
+                    if (userAnswer === question.correctAnswer) {
+                        correctAnswers++;
+                    }
+                
+                    
+                }
+            }
+
+            const scorePercentage = (correctAnswers / totalQuestions) * 100;
+            alert(`Your Score: ${correctAnswers}/${totalQuestions} (${scorePercentage}%)`);
+        }
+
+        generateQuiz();
+    </script>
+</body>
+</html>
