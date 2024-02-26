@@ -1,3 +1,3 @@
-# Qiuzz-Masters
+# Quizz-Masters
 
-This project is usefull for interacive learning for students, and also kids 
+### Basic Quizz website model
